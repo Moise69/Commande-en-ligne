@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Menu du Restaurant</title>
+</head>
+<body>
+    <h1>Notre Menu</h1>
+    <ul>
+        {% for dish in dishes %}
+            <li>
+                <strong>{{ Pizza }}</strong> : {{ 4fromage }} - ${{ 13.000 ar }}
+            </li>
+            <li>
+                <strong>{{ Gateau }}</strong> : {{ Chocolat }} - ${{ 15.000 ar }}
+            </li>
+            <li>
+                <strong>{{ Glace }}</strong> : {{ Vanille et coco }} - ${{ 10.000 ar }}
+            </li>
+            <li>
+                <strong>{{ Gratin }}</strong> : {{ A l'Anglaise }} - ${{ 30.000 ar }}
+            </li>
+        {% empty %}
+            <li>Aucun plat disponible pour le moment.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_order' %}">Passer une commande</a>
+</body>
+</html>
